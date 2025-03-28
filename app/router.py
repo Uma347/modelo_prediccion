@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Form
 import joblib
 
 router = APIRouter()
@@ -11,7 +11,7 @@ def saludo(nombre: str):
     return {"mensaje": f"¡Hola, {nombre}!"}
 
 @router.post("/predecir/")
-def predecir_sentimiento(texto: str):
+async def predecir_sentimiento(texto: str = Form(...)):
     resultado = modelo.predict([texto])[0]
     sentimiento = "Positivo" if resultado == 1 else "Negativo"
     return {"texto": texto, "sentimiento": sentimiento}
