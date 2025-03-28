@@ -3,10 +3,12 @@ anyio==4.9.0
 click==8.1.8
 exceptiongroup==1.2.2
 fastapi==0.115.12
+gunicorn==23.0.0
 h11==0.14.0
 idna==3.10
 joblib==1.4.2
 numpy==2.2.4
+packaging==24.2
 pandas==2.2.3
 pydantic==2.11.0
 pydantic_core==2.33.0
